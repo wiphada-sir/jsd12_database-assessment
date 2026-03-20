@@ -19,9 +19,10 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
--- 1. SELECT column_name (name, price)
--- 2. use FROM to find name, price in menuItems
--- 3. use WHERE to condition the category 'Side'
+-- 1. SELECT staff(first_name, last_name) and COUNT the orders by order_id AS order_count
+-- 2. use FROM to find staff table and JOIN orders table ON staff.staff_id = orders.staff_id
+-- 3. use GROUP BY to grouped the column name 'staff_id'
+-- 4. use ORDER BY to ordered by order_count in descending order
 select staff.first_name, staff.last_name, count(orders.order_id) as order_count
 from staff join orders
 on staff.staff_id = orders.staff_id
